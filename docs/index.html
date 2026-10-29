@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fabrique ton site — Collectif Tariqa PRO</title>
+<meta name="description" content="Un site qui convainc la bonne personne, trouvé sur Google et cité par les IA. Claude prépare, tu valides. La brique Site du Collectif Tariqa PRO, réservée aux membres.">
+<style>
+  :root{
+    --beige:#F4EFE5; --beige-2:#EDE6D6; --noir:#161413; --noir-2:#2c2722;
+    --or:#C29B45; --or-soft:#E8D9B5; --blanc:#FFFFFF; --gris:#6f675c;
+    --ok:#3f7a4f; --warn:#9a6a1f;
+    --radius:16px; --maxw:760px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    background:var(--beige); color:var(--noir);
+    line-height:1.65; -webkit-font-smoothing:antialiased;
+    padding:0 20px;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto}
+  header{text-align:center;padding:64px 0 40px}
+  .kicker{letter-spacing:.28em;text-transform:uppercase;font-size:12px;color:var(--or);font-weight:700;margin-bottom:18px}
+  h1{font-size:clamp(30px,6vw,46px);line-height:1.1;font-weight:800;letter-spacing:-.02em}
+  h1 .or{color:var(--or)}
+  .tagline{margin-top:14px;font-style:italic;color:var(--gris);font-size:17px}
+  .sub{margin-top:22px;font-size:17px;color:var(--noir-2);max-width:540px;margin-left:auto;margin-right:auto}
+  .rule{width:54px;height:3px;background:var(--or);border-radius:3px;margin:30px auto 0}
+  section{margin:40px 0}
+  h2{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--or);font-weight:700;margin-bottom:8px}
+  .lead{font-size:24px;font-weight:800;letter-spacing:-.01em;margin-bottom:16px;line-height:1.25}
+  .step{background:var(--blanc);border:1px solid var(--beige-2);border-radius:var(--radius);padding:26px 26px 24px;margin:18px 0;box-shadow:0 1px 0 rgba(0,0,0,.02)}
+  .step-head{display:flex;align-items:center;gap:14px;margin-bottom:10px}
+  .num{flex:0 0 auto;width:40px;height:40px;border-radius:50%;background:var(--noir);color:var(--or);display:grid;place-items:center;font-weight:800;font-size:18px}
+  .step-head h3{font-size:20px;font-weight:800;letter-spacing:-.01em}
+  .step p{margin:10px 0;color:var(--noir-2)}
+  .step ul{margin:10px 0 10px 4px;list-style:none}
+  .step ul li{position:relative;padding-left:24px;margin:7px 0;color:var(--noir-2)}
+  .step ul li::before{content:"";position:absolute;left:4px;top:11px;width:7px;height:7px;border-radius:50%;background:var(--or)}
+  .cmd{position:relative;background:var(--noir);color:#f3ead6;border-radius:12px;padding:16px 54px 16px 18px;margin:12px 0;font-family:"SF Mono",Menlo,Consolas,monospace;font-size:14.5px;overflow-x:auto;white-space:nowrap}
+  .cmd .copy{position:absolute;right:8px;top:8px;background:var(--or);color:var(--noir);border:none;border-radius:8px;padding:6px 10px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit}
+  .cmd .copy:active{transform:scale(.96)}
+  .say{display:inline-block;background:var(--or-soft);color:var(--noir);border-radius:10px;padding:10px 14px;margin:10px 0;font-weight:700}
+  .note{border-radius:12px;padding:16px 18px;margin:16px 0;font-size:15px}
+  .note .t{font-weight:800;margin-bottom:4px;display:block}
+  .note.info{background:var(--or-soft);border-left:4px solid var(--or)}
+  .note.ok{background:#e8f0e6;border-left:4px solid var(--ok)}
+  .grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:8px}
+  @media(min-width:560px){.grid{grid-template-columns:1fr 1fr}}
+  .tile{background:var(--blanc);border:1px solid var(--beige-2);border-radius:14px;padding:18px}
+  .tile .e{font-size:22px}
+  .tile b{display:block;margin:6px 0 2px;font-size:16px}
+  .tile span{color:var(--gris);font-size:14px}
+  details{background:var(--blanc);border:1px solid var(--beige-2);border-radius:12px;padding:4px 18px;margin:10px 0}
+  details summary{cursor:pointer;font-weight:700;padding:12px 0;list-style:none}
+  details summary::-webkit-details-marker{display:none}
+  details summary::before{content:"+ ";color:var(--or);font-weight:800}
+  details[open] summary::before{content:"– "}
+  details p{padding:0 0 14px;color:var(--noir-2)}
+  footer{text-align:center;padding:48px 0 60px;color:var(--gris)}
+  footer .brand{font-weight:800;color:var(--noir);font-size:18px}
+  footer .tg{color:var(--or);font-style:italic;margin-top:4px}
+  .bismillah{font-size:15px;color:var(--noir-2);margin-bottom:18px}
+  .rm{width:100%;border-collapse:collapse;background:var(--blanc);border:1px solid var(--beige-2);border-radius:14px;overflow:hidden;font-size:15px;margin-top:10px}
+  .rm th,.rm td{text-align:left;padding:11px 13px;border-bottom:1px solid var(--beige-2)}
+  .rm th{background:var(--beige-2);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--noir-2)}
+  .rm tr:last-child td{border-bottom:0}
+  .rm .ok{color:var(--ok);font-weight:700;white-space:nowrap}
+  .rm .soon{color:var(--gris);white-space:nowrap}
+  .rm .here td{background:rgba(194,155,69,.12);font-weight:700}
+  .rm a{color:var(--or);font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="kicker">Collectif Tariqa PRO · Brique Site</div>
+    <h1>Fabrique<br><span class="or">ton site</span>.</h1>
+    <p class="tagline">Entreprendre. Ensemble. Vers Dieu.</p>
+    <p class="sub">De ta landing page à un site costaud qui vend : un site qui convainc la bonne personne, qui est trouvé sur Google, et qui est cité par les IA comme ChatGPT, Gemini ou Claude. Claude prépare tout ; toi, tu valides.</p>
+    <div class="rule"></div>
+  </header>
+
+  <section>
+    <h2>Pourquoi cette brique</h2>
+    <p class="lead">Ton site est le seul endroit qui t'appartient.</p>
+    <div class="step">
+      <p>Un réseau peut changer ses règles demain ; ton site reste. C'est là que tes contenus envoient les gens, et c'est là que Google et les IA viennent lire qui tu es.</p>
+      <p>La page de vente du parcours du Collectif Tariqa PRO (pilier 1, avec « Mon projet ») t'a donné une première base. Ici, on fait la suite : un site <b>pensé pour convertir</b>, <b>pensé pour être trouvé</b>, et <b>qui sonne comme toi</b>.</p>
+      <div class="note info"><span class="t">Tu n'as rien à savoir sur la technique</span>Claude joue le chef de projet, le rédacteur, le designer et le développeur. Il te montre des pages déjà écrites et des maquettes déjà dessinées. Tu réponds « ok » ou tu corriges.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Le bon format pour toi</h2>
+    <p class="lead">À la séance 0, quatre questions choisissent ce dont tu as vraiment besoin.</p>
+    <div class="grid">
+      <div class="tile"><b>Page de vente renforcée</b><span>Tu démarres, ou tes clients viennent surtout d'Instagram et des messages. Une page longue et solide, que tu envoies tous les jours.</span></div>
+      <div class="tile"><b>Site local</b><span>Tes clients viennent d'une zone précise. La fiche Google d'abord, puis un site court.</span></div>
+      <div class="tile"><b>Site complet</b><span>Tes clients réfléchissent avant d'acheter. Pages d'offre, preuves, questions fréquentes, pages pour Google et pour les IA.</span></div>
+      <div class="tile"><b>Et ensuite, le site qui grandit</b><span>Des articles et des pages tirées de tes vidéos, que Claude prépare et que tu valides.</span></div>
+    </div>
+    <p class="sub" style="max-width:none;margin-left:0;margin-right:0">Tu peux toujours choisir un format plus grand. Une page renforcée devient un site complet sans rien perdre.</p>
+  </section>
+
+  <section>
+    <h2>Ce que tu vas faire</h2>
+    <p class="lead">Une séance 0, cinq séances, puis la construction.</p>
+
+    <div class="step">
+      <div class="step-head"><div class="num">0</div><h3>Bienvenue et ton format</h3></div>
+      <p>Une séance courte : Claude vérifie que tes outils sont prêts, te présente la brique, regarde ce que tu as déjà, et choisit avec toi le bon format.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-head"><div class="num">1</div><h3>Le cadre</h3></div>
+      <p>Une action principale, tes publics, le plan de ton site, et <b>ta phrase de présentation</b>, répétée partout. C'est elle qui permet à Google et aux IA de te reconnaître.</p>
+    </div>
+    <div class="step">
+      <div class="step-head"><div class="num">2</div><h3>Les pages qui vendent</h3></div>
+      <p>Ton accueil et ta page d'offre, rédigés dans ta voix, avec <b>au moins une preuve vraie</b> par page. Puis un visiteur sceptique les relit et dit ce qui le bloque.</p>
+    </div>
+    <div class="step">
+      <div class="step-head"><div class="num">3</div><h3>Le reste du contenu</h3></div>
+      <p>Tes questions fréquentes, les pages qui répondent à ce que ton client cherche sur Google, et tes mentions légales selon ton pays.</p>
+    </div>
+    <div class="step">
+      <div class="step-head"><div class="num">4</div><h3>Le design</h3></div>
+      <p>Deux directions dessinées à partir de ta charte, sur ordinateur et sur téléphone. Tu dis « ok » ou « l'autre ».</p>
+    </div>
+    <div class="step">
+      <div class="step-head"><div class="num">5</div><h3>Le dossier de construction</h3></div>
+      <p>Tout est décidé avant de coder. La construction ne sert plus qu'à construire.</p>
+    </div>
+    <div class="step">
+      <div class="step-head"><div class="num">→</div><h3>La construction et la mise en ligne</h3></div>
+      <p>Claude code ton site et le met en ligne avec toi. <b>Rien ne part en ligne sans que tu l'aies vu sur ton téléphone.</b> Tout se montre d'abord sur des aperçus gratuits, puis part en ligne par lots.</p>
+    </div>
+    <div class="note info"><span class="t">Combien de temps</span>Par sessions d'environ deux heures, séance 0 et construction comprises : environ 4 sessions pour une page de vente renforcée, 5 pour un site local, 6 à 7 pour un site complet.</div>
+  </section>
+
+  <section>
+    <h2>Trouvé sur Google, cité par les IA</h2>
+    <p class="lead">Pas de recette secrète : des bases solides, vérifiées à la source.</p>
+    <div class="step">
+      <ul>
+        <li>Un site rapide, lisible sur téléphone, dont <b>le texte est lisible par les robots</b> de Google et des IA.</li>
+        <li><b>Une page, une intention</b> : les pages qui vendent d'un côté, les pages qui répondent aux questions de l'autre.</li>
+        <li>Ta <b>présentation fixe</b> répétée partout, des faits vrais et datés, des questions fréquentes utiles.</li>
+        <li>Les outils gratuits de Google et de Bing branchés, et un <b>test mensuel</b> pour savoir si les IA te connaissent.</li>
+      </ul>
+      <div class="note info"><span class="t">Et une règle qui protège ton site</span>Google sanctionne les pages creuses publiées en série. Chez nous, chaque page contient quelque chose que toi seul pouvais dire, et rien n'est publié sans ta relecture.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>La méthode complète — où tu en es</h2>
+    <p class="lead">Six piliers, dans l'ordre, et des briques transversales.</p>
+    <table class="rm"><thead><tr><th>Pilier</th><th>Ce que tu y fais</th><th>Statut</th></tr></thead><tbody>
+      <tr><td><strong>1 · Mindset</strong></td><td>l'état d'esprit qui tient <b>+</b> ton projet au clair : persona → offre → positionnement (marque) → voix</td><td class="ok"><a href="https://collectif-tariqa-pro.github.io/ctp-plugin/">✓ disponible</a></td> </tr>
+      <tr><td><strong>2 · Vente</strong></td><td>vendre, et le prouver par la répétition</td><td class="ok"><a href="https://collectif-tariqa-pro.github.io/ctp-vente/">✓ membres</a></td> </tr>
+      <tr><td><strong>3 · Produit</strong></td><td>passer d'un MVP à un vrai produit</td><td class="ok"><a href="https://collectif-tariqa-pro.github.io/ctp-produit/">✓ membres</a></td> </tr>
+      <tr><td><strong>4 · Marketing</strong></td><td>être trouvé, être choisi</td><td class="ok"><a href="https://collectif-tariqa-pro.github.io/ctp-marketing/">✓ membres</a></td> </tr>
+      <tr><td><strong>5 · Opérations</strong></td><td>structurer ta boîte pour passer de solo à équipe</td><td class="ok"><a href="https://collectif-tariqa-pro.github.io/ctp-process/">✓ membres</a></td> </tr>
+      <tr><td><strong>6 · Finances</strong></td><td>piloter l'argent sainement</td><td class="soon">à venir</td> </tr>
+      <tr class="here"><td><strong>+ Site</strong></td><td>un site qui convertit, trouvé sur Google et par les IA — <em>tu es ici</em></td><td class="ok">✓ membres</td> </tr>
+      <tr><td><strong>+ Stratégie de contenu</strong></td><td>YouTube : stratégie et production</td><td class="ok"><a href="https://collectif-tariqa-pro.github.io/ctp-youtube/">✓ membres</a></td> </tr>
+      <tr><td><strong>+ Stratégie de marque</strong></td><td>la marque en profondeur, quand le marché t'a répondu</td><td class="ok"><a href="https://collectif-tariqa-pro.github.io/ctp-marque/">✓ membres</a></td> </tr>
+    </tbody></table>
+  </section>
+
+  <section>
+    <h2>Est-ce le bon moment pour toi ?</h2>
+    <p class="lead">Réservée aux membres, sans porte d'entrée : ouverte à tout membre qui a une offre.</p>
+    <div class="step">
+      <ul>
+        <li>Tu as <b>une offre</b>, même si tu n'as pas encore de client.</li>
+        <li>Idéalement, tu as fait <b>« Mon projet »</b> : persona → offre → positionnement (marque) → voix. Claude charge tout et ne te repose aucune question.</li>
+        <li>Tu vends un <b>service</b>, un accompagnement, du conseil, ou tu as une activité locale.</li>
+      </ul>
+      <div class="note info"><span class="t">Tu vends surtout des produits en ligne ?</span>Ce n'est pas le bon outil : il te faut une vraie boutique. Le parcours e-commerce du Collectif est fait pour toi. Quelques objets vendus à côté d'un service, en revanche, s'ajoutent ici.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Installation</h2>
+    <p class="lead">D'abord tes outils, puis la brique. Claude te guide si ça bloque.</p>
+    <div class="step">
+      <div class="step-head"><div class="num">0</div><h3>Avant de commencer</h3></div>
+      <ul>
+        <li><b>Claude Code.</b> Il te faut un abonnement Claude qui donne accès à Claude Code, et l'application de bureau Claude (claude.ai/download), onglet <b>Code</b>.</li>
+        <li><b>Un compte GitHub, gratuit.</b> GitHub est le site où vit le code de la brique, et plus tard celui de ton site. Crée ton compte sur github.com, puis communique ton nom d'utilisateur GitHub au Collectif via l'espace Circle.</li>
+        <li><b>L'invitation du Collectif.</b> Tu reçois ensuite par e-mail une invitation de l'organisation <b>Collectif-Tariqa-PRO</b>. Accepte-la : c'est elle qui t'ouvre l'accès au dépôt privé de la brique.</li>
+      </ul>
+    </div>
+    <div class="step">
+      <div class="step-head"><div class="num">1</div><h3>Ouvre ton dossier de travail dans Claude Code</h3></div>
+      <p><b>Le même que pour tes piliers précédents.</b> La brique Site va y lire ton persona, ton offre, ta charte, ta voix et tes témoignages.</p>
+    </div>
+    <div class="step">
+      <div class="step-head"><div class="num">2</div><h3>Installe la boîte à outils du Collectif (prérequis)</h3></div>
+      <p>Elle contient le parcours du Collectif Tariqa PRO et <b>Coach Zaki</b>. Colle ce message dans Claude :</p>
+      <div class="cmd"><button class="copy">Copier</button>Installe le plugin du Collectif Tariqa PRO depuis ce lien : https://github.com/Collectif-Tariqa-PRO/ctp-plugin.git</div>
+    </div>
+    <div class="step">
+      <div class="step-head"><div class="num">3</div><h3>Installe la brique Site (réservée aux membres)</h3></div>
+      <p>Colle ce message dans Claude :</p>
+      <div class="cmd"><button class="copy">Copier</button>Installe le plugin Site depuis ce lien : https://github.com/Collectif-Tariqa-PRO/ctp-site-plugin.git</div>
+      <p>Ou tape ces deux commandes, l'une après l'autre :</p>
+      <div class="cmd"><button class="copy">Copier</button>/plugin marketplace add Collectif-Tariqa-PRO/ctp-site-plugin</div>
+      <div class="cmd"><button class="copy">Copier</button>/plugin install collectif-tariqa-pro-site@ctp-site</div>
+      <div class="note info"><span class="t">L'accès est refusé ?</span>Deux raisons possibles. Soit tu n'as pas encore accepté l'invitation de l'organisation Collectif-Tariqa-PRO : cherche l'e-mail de GitHub, y compris dans tes courriers indésirables. Soit Claude Code n'est pas connecté à ton compte GitHub : écris-lui « connecte-toi à mon compte GitHub », et valide toi-même dans ton navigateur.</div>
+      <div class="note info"><span class="t">Pas encore membre ?</span>Le lien ne s'ouvrira pas : l'accès est réservé aux membres du Collectif. Le pilier 1, lui, est en accès libre, avec sa première page de vente. Pour la suite, rejoins le Collectif, et l'accès s'ouvre dans ton espace.</div>
+    </div>
+    <div class="step">
+      <div class="step-head"><div class="num">4</div><h3>Lance</h3></div>
+      <p>Toujours dans ce dossier, écris simplement :</p>
+      <div class="say">Séance 0</div>
+      <p>Si tu écris « Séance 1 », Claude te dit qu'on commence par la séance 0, qui est courte. « Refais mon site » ou « je veux être trouvé sur Google » fonctionnent aussi.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Quand tu bloques — Coach Zaki</h2>
+    <p class="lead">Un coach qui te pousse, pas qui te flatte.</p>
+    <div class="step">
+      <p>Il te demande la preuve avant l'adjectif. Il refuse « le seul » ou « le premier » sans vérification. Et s'il te voit peaufiner ton site au lieu d'aller vendre, il te le dit.</p>
+      <div class="say">coache-moi, mon site ne m'amène aucune demande</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>La porte</h2>
+    <p class="lead">Elle se compte en actes, jamais en apparence.</p>
+    <div class="step">
+      <p><b>Ton site est en ligne · les outils de Google et de Bing sont branchés · un premier test dans les IA est noté · tu as envoyé l'adresse de ta page d'offre à au moins cinq prospects ou clients, et la mesure est prête à compter les demandes · validés en call.</b></p>
+      <p>Ensuite, ton site se rouvre <b>trente minutes par mois</b> : on lit ce qui se passe, on vérifie si les IA te connaissent, on ajoute une preuve, on améliore une page.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Questions fréquentes</h2>
+    <details><summary>Je ne sais pas coder. C'est un problème ?</summary><p>Non. Tu discutes avec Claude, qui écrit, dessine et code. Tu valides ce qu'il te montre. Pour modifier ton site plus tard, tu le lui dis simplement : « ajoute ce témoignage ».</p></details>
+    <details><summary>J'ai déjà un site sur WordPress ou Wix. On repart de zéro ?</summary><p>Non. Claude lit ton site existant et en garde tout ce qui est bon. Il prépare aussi les redirections, pour que tu ne perdes pas ce que Google connaît déjà de toi.</p></details>
+    <details><summary>Combien ça coûte ?</summary><p>En plus de ton abonnement Claude (nécessaire pour Claude Code), le seul coût est ton nom de domaine, quelques euros par an, et tu peux commencer sans, sur une adresse gratuite. Tous les autres outils sont gratuits.</p><p>Ton site est hébergé gratuitement chez Netlify. Son offre gratuite permet environ vingt mises en ligne par mois ; les aperçus, eux, sont gratuits. Si la limite est dépassée, le site est mis en pause jusqu'au mois suivant. Alors on te montre tout sur les aperçus, on met en ligne par lots, et Claude te prévient avant d'approcher la limite. Si tu dois publier plus souvent, on bascule gratuitement sur Cloudflare Pages.</p></details>
+    <details><summary>Combien de temps ça prend ?</summary><p>Par sessions d'environ deux heures, séance 0 et construction comprises : environ quatre pour une page de vente renforcée, cinq pour un site local, six à sept pour un site complet. Entre deux sessions, tu continues à vendre.</p></details>
+    <details><summary>Les IA vont-elles vraiment parler de moi ?</summary><p>Personne ne peut le garantir. Ce qu'on fait, c'est mettre en place tout ce qui te rend lisible et crédible pour elles, puis mesurer chaque mois si elles te citent. Méfie-toi de qui te promet le contraire.</p></details>
+    <details><summary>Est-ce que Claude va publier des articles à ma place ?</summary><p>Jamais sans toi. Il prépare des brouillons à partir de ta matière et de tes vidéos ; tu relis, tu valides, et seulement ensuite c'est publié.</p></details>
+    <details><summary>Mes comptes m'appartiennent ?</summary><p>Oui. Ton nom de domaine, GitHub, Netlify et les outils de Google sont tous à ton nom. Si tu changes d'outil demain, tu gardes tout.</p></details>
+  </section>
+
+  <footer>
+    <p class="bismillah">Bismillah, et bonne construction. On avance — ensemble.</p>
+    <div class="brand">Collectif Tariqa PRO</div>
+    <div class="tg">Entreprendre. Ensemble. Vers Dieu.</div>
+  </footer>
+
+</div>
+<script>
+  document.querySelectorAll('.cmd .copy').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var txt=btn.parentNode.textContent.replace('Copier','').trim();
+      navigator.clipboard.writeText(txt).then(function(){
+        var old=btn.textContent;btn.textContent='Copié ✓';
+        setTimeout(function(){btn.textContent=old;},1500);
+      });
+    });
+  });
+</script>
+</body>
+</html>
